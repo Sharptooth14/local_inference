@@ -1,0 +1,107 @@
+/* ================================================================
+   Global Styles — Dark premium theme
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-base:       #0a0a0f;
+  --bg-surface:    #111118;
+  --bg-elevated:   #1a1a24;
+  --bg-hover:      #222230;
+  --border:        rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  --text-primary:   #f0f0f8;
+  --text-secondary: #8888aa;
+  --text-muted:     #55556a;
+
+  --accent:         #6c63ff;
+  --accent-glow:    rgba(108, 99, 255, 0.25);
+  --accent-hover:   #7c74ff;
+
+  --user-bubble:    #1e1e30;
+  --ai-bubble:      #131320;
+
+  --green:  #22d3a5;
+  --red:    #f87171;
+  --yellow: #fbbf24;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.6);
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#__next, main {
+  height: 100%;
+}
+
+/* ---- Typography ---- */
+h1, h2, h3, h4 { font-weight: 600; }
+strong { font-weight: 600; color: var(--text-primary); }
+em { font-style: italic; color: var(--text-secondary); }
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: rgba(108, 99, 255, 0.12);
+  color: #a99eff;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+pre {
+  background: #0d0d16;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+pre code {
+  background: none;
+  padding: 0;
+  color: #c9d1ff;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+p { margin-bottom: 0.5rem; }
+p:last-child { margin-bottom: 0; }
+ul, ol { padding-left: 1.4rem; margin: 0.5rem 0; }
+li { margin-bottom: 0.25rem; }
+h1, h2, h3 { margin: 0.75rem 0 0.4rem; }
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* ---- Focus ---- */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+button { cursor: pointer; font-family: inherit; }

@@ -1,0 +1,22 @@
+services:
+  vllm:
+    image: vllm/vllm-openai:v0.5.4
+    container_name: vllm-server
+    ports:
+      - "8000:8000"
+    volumes:
+      # Map your local Hugging Face cache so you don't redownload models on restart
+      - ~/.cache/huggingface:/root/.cache/huggingface
+    ipc: host
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    command: [
+      "--model", "Qwen/Qwen2.5-1.5B-Instruct",
+      "--gpu-memory-utilization", "0.8",
+      "--max-model-len", "4096"
+    ]

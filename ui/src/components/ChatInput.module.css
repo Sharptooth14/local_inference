@@ -1,0 +1,94 @@
+/* Chat Input */
+.container {
+  padding: 0.75rem 1rem 1rem;
+  border-top: 1px solid var(--border);
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(12px);
+  flex-shrink: 0;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xl);
+  padding: 0.6rem 0.75rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.inputWrapper:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.textarea {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  resize: none;
+  max-height: 180px;
+  padding: 0.25rem 0.25rem;
+  caret-color: var(--accent);
+}
+.textarea::placeholder {
+  color: var(--text-muted);
+}
+.textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding-bottom: 2px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: none;
+  transition: all 0.15s;
+}
+
+.sendBtn {
+  background: var(--accent);
+  color: #fff;
+}
+.sendBtn:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+.sendBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.stopBtn {
+  background: rgba(248, 113, 113, 0.15);
+  color: var(--red);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+.stopBtn:hover {
+  background: rgba(248, 113, 113, 0.25);
+}
+
+.hint {
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
